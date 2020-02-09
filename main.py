@@ -3,7 +3,7 @@ import argparse
 import torch
 from torch.utils import model_zoo
 from torch.autograd import Variable
-
+from pdb import set_trace
 import models
 import utils
 from data_loader import get_train_test_loader, get_office31_dataloader
@@ -41,6 +41,7 @@ def train(model, optimizer, epoch, _lambda):
 
         optimizer.zero_grad()
         # deep coral
+        set_trace()
         out1, out2 = model(source_data, target_data)
 
         classification_loss = torch.nn.functional.cross_entropy(out1, source_label)
