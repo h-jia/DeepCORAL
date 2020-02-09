@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 from torch.autograd import Function, Variable
+from pdb import set_trace
 
 CUDA = True if torch.cuda.is_available() else False
 
@@ -36,13 +37,14 @@ class DeepCORAL(nn.Module):
 
         # initialize according to CORAL paper experiment
         self.fc.weight.data.normal_(0, 0.005)
-
+    # sharedNet as PC-DARTS
     def forward(self, source, target):
         source = self.sharedNet(source)
         source = self.fc(source)
 
         target = self.sharedNet(target)
         target = self.fc(target)
+        set_trace()
         return source, target
 
 
