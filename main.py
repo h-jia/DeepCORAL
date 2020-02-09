@@ -41,7 +41,6 @@ def train(model, optimizer, epoch, _lambda):
 
         optimizer.zero_grad()
         # deep coral
-        set_trace()
         out1, out2 = model(source_data, target_data)
 
         classification_loss = torch.nn.functional.cross_entropy(out1, source_label)

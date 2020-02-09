@@ -39,12 +39,12 @@ class DeepCORAL(nn.Module):
         self.fc.weight.data.normal_(0, 0.005)
     # sharedNet as PC-DARTS
     def forward(self, source, target):
+        set_trace()
         source = self.sharedNet(source)
         source = self.fc(source)
 
         target = self.sharedNet(target)
         target = self.fc(target)
-        set_trace()
         return source, target
 
 
