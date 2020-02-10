@@ -124,7 +124,7 @@ if __name__ == '__main__':
     parser.add_argument('--load', help='Resume from checkpoint file')
     args = parser.parse_args()
 
-    model = models.DeepCORAL(31)
+    model = models.DeepCORAL(31)  # num_classes=31
 
     # support different learning rate according to CORAL paper
     # i.e. 10 times learning rate for the last two fc layers.
