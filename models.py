@@ -41,10 +41,10 @@ class DeepCORAL(nn.Module):
     def forward(self, source, target):
         source = self.sharedNet(source)
         print("source: ", source.shape)
-        set_trace()
         source = self.fc(source)
 
         target = self.sharedNet(target)
+        print("target: ", target.shape)
         target = self.fc(target)
         return source, target
 
